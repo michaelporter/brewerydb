@@ -4,22 +4,22 @@ import(
   "net/http"
 )
 
-var base string = "https://api.brewerydb.com/"
-var version string = "v2"
+var c *client
 
-var apiKey string
+func NewClient(k string) (c *client) {
+  return &client{apiKey:apiKey, base: base}
+}
 
-func Setkey(k string) {
+func SetApiKey(k string) (bool){
   apiKey = "?key=" + k
-  return
+  c = NewClient(apiKey)
+  return c != nil
 }
 
 func Get(path string, queryParams map[string]string) (res *http.Response, err error) {
   queryString := _makeQueryString(queryParams)
   fullPath    := _combinePath(path, queryString)
 
-  res, err = http.Get(fullPath)
-
-  return
+  return c._get(fullPath)
 }
 

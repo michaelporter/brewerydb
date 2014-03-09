@@ -9,7 +9,7 @@ func _makeQueryString(queryParams map[string]string) (queryString string) {
 }
 
 func _combinePath(path, queryString string) (fullPath string) {
-  fullPath = base + version + path + apiKey + queryString
+  fullPath = base + path + apiKey + queryString
 
   return
 }
