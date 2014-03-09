@@ -7,7 +7,7 @@
     	"github.com/michaelporter/brewerydb"
     )
 
-    func main() {
+    func getBeers() {
       brewerydb.SetApiKey("your-api-key")
       
       queryParams := map[string]string{
