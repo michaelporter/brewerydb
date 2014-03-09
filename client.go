@@ -12,6 +12,9 @@ type client struct {
   base string
 }
 
+func newClient(k string) (c *client) {
+  return &client{apiKey:apiKey, base: base}
+}
 
 func (*client) _get(fullPath string) (res *http.Response, err error) {
   return http.Get(fullPath)

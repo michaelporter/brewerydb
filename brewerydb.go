@@ -6,13 +6,9 @@ import(
 
 var c *client
 
-func NewClient(k string) (c *client) {
-  return &client{apiKey:apiKey, base: base}
-}
-
 func SetApiKey(k string) (bool){
   apiKey = "?key=" + k
-  c = NewClient(apiKey)
+  c = newClient(apiKey)
   return c != nil
 }
 
