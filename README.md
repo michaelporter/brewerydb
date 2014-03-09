@@ -8,10 +8,12 @@
     )
 
     func main() {
-      brewerydb.Setkey("your-api-key")
+      brewerydb.SetApiKey("your-api-key")
       
-      queryParams := map[string]string { "key" : "value" }
-      res, err := brewerydb.Get("beers/beer-id", queryParams)
+      queryParams := map[string]string{
+      	'abv': '6',
+      }
+      res, err := brewerydb.Get("/beers", queryParams)
     }
 
 ```
