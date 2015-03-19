@@ -1,11 +1,6 @@
 # BreweryDB API Wrapper in Golang
 
 
-.. |travisci| image::  https://travis-ci.org/hobbeswalsh/flask-sillywalk.png
-.. _travisci: https://travis-ci.org/hobbeswalsh/flask-sillywalk
-
-|travisci|_
-
 ## To Use:
 
 ```
