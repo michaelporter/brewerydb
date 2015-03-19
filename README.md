@@ -1,6 +1,6 @@
 # BreweryDB API Wrapper in Golang
 
-[Travis CI status](https://travis-ci.org/hobbeswalsh/brewerydb.svg)
+[![Build Status](https://travis-ci.org/hobbeswalsh/brewerydb.svg?branch=master)](https://travis-ci.org/hobbeswalsh/brewerydb)
 
 ## To Use:
 
