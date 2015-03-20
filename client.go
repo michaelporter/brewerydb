@@ -2,7 +2,6 @@ package brewerydb
 
 import (
 	"encoding/json"
-	"fmt"
 	"github.com/google/go-querystring/query"
 	"io/ioutil"
 	"net/http"
@@ -46,7 +45,6 @@ func getJson(url string) ([]byte, error) {
 
 func decodeJson(j []byte, i interface{}) {
 	json.Unmarshal(j, &i)
-	fmt.Println(i)
 }
 
 func NewClient(key string) *client {
@@ -56,7 +54,7 @@ func NewClient(key string) *client {
 func (c *client) RandomBeer(q BeerQuery) (Beer, error) {
 	b := BeerResult{}
 	v, _ := query.Values(q)
-	url := c.base + "beer/random?key=" + c.apiKey + "&" + v.Encode()
+	url := c.base + "beer/random?withBreweries=Y&key=" + c.apiKey + "&" + v.Encode()
 	j, err := getJson(url)
 	decodeJson(j, b)
 	if err != nil {

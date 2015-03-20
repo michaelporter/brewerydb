@@ -83,13 +83,35 @@ type Beer struct {
 		Id   int64  `json:"id"`
 		Name string `json:"name"`
 	} `json:"srm"`
-	SrmId         int64       `json:"srmId"`
-	Status        string      `json:"status"`
-	StatusDisplay string      `json:"statusDisplay"`
-	Style         interface{} `json:"style"`
-	StyleId       int64       `json:"styleId"`
-	UpdateDate    string      `json:"updateDate"`
-	Year          int64       `json:"year"`
+	SrmId         int64  `json:"srmId"`
+	Status        string `json:"status"`
+	StatusDisplay string `json:"statusDisplay"`
+	Style         Style  `json:"style"`
+	StyleId       int64  `json:"styleId"`
+	UpdateDate    string `json:"updateDate"`
+	Year          int64  `json:"year"`
+}
+
+type Style struct {
+	AbvMax   string `json:"abvMax"`
+	AbvMin   string `json:"abvMin"`
+	Category struct {
+		CreateDate string `json:"createDate"`
+		Id         int64  `json:"id"`
+		Name       string `json:"name"`
+	} `json:"category"`
+	CategoryId  int64  `json:"categoryId"`
+	CreateDate  string `json:"createDate"`
+	Description string `json:"description"`
+	FgMax       string `json:"fgMax"`
+	FgMin       string `json:"fgMin"`
+	IbuMax      string `json:"ibuMax"`
+	IbuMin      string `json:"ibuMin"`
+	Id          int64  `json:"id"`
+	Name        string `json:"name"`
+	OgMin       string `json:"ogMin"`
+	SrmMax      string `json:"srmMax"`
+	SrmMin      string `json:"srmMin"`
 }
 
 type BeerResults struct {
