@@ -13,11 +13,11 @@
     
     c := brewerydb.NewClient("myApiKey")
 
-    // I want a random beer.
-    beer, err := c.RandomBeer()
+    // I want a random beer. No constraints on the query.
+    beer, err := c.RandomBeer(brewerydb.BeerQuery{})
 
     // I want a list of breweries near some zip code
-    lq = brewerydb.LocationQuery{}
+    lq := brewerydb.LocationQuery{}
     lq.PostalCode = "10101"
     breweries, err := c.GetLocation(lq)
 
